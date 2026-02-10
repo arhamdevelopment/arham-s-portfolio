@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Linkedin, ExternalLink, Phone } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 /* ─── Fade-in wrapper ─── */
 const Section = ({ children, className = "", id }: { children: React.ReactNode; className?: string; id?: string }) => {
@@ -27,12 +28,11 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   </h2>
 );
 
-/* ─── NAV ─── */
 const Navbar = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-    <div className="w-[90%] mx-auto h-14 flex items-center justify-between">
+  <nav className="fixed top-0 left-0 right-0 z-50">
+    <div className="w-[80%] mx-auto h-14 flex items-center justify-between mt-4 rounded-lg backdrop-blur-3xl bg-black/40 border border-white/10 px-6 shadow-lg">
       <span className="font-heading text-sm font-light tracking-wide text-foreground">
-        Arham — <span className="text-muted-foreground">Product & Project Manager</span>
+        Arham / <span className="text-muted-foreground italic">Product & Project Manager</span>
       </span>
       <div className="flex items-center gap-4">
         <a href="mailto:enchantinggeekboy@gmail.com" className="text-muted-foreground hover:text-secondary transition-colors">
@@ -46,17 +46,16 @@ const Navbar = () => (
   </nav>
 );
 
-/* ─── HERO ─── */
 const Hero = () => (
   <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center relative">
-    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="w-[90%] mx-auto">
+    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="w-[85%] mx-auto">
       <p className="font-body text-xs tracking-[0.35em] uppercase text-secondary mb-6">Product & Project Manager</p>
       <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-extralight tracking-tight leading-[1.1]">
-        Muhammad<br />Arham Wasim
+        Arham Wasim
       </h1>
       <div className="mt-8 w-16 h-[1px] bg-secondary mx-auto" />
       <p className="mt-8 max-w-lg mx-auto font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
-        Crafting seamless digital products through strategic vision, data-driven decisions, and cross-functional collaboration — turning complex problems into elegant solutions.
+        Transforming business challenges into scalable, user-centric digital solutions through strategic insights, cross-functional leadership, and data-driven execution across product development and team coordination.
       </p>
     </motion.div>
 
@@ -73,7 +72,6 @@ const Hero = () => (
   </section>
 );
 
-/* ─── ABOUT / OVERVIEW ─── */
 const sectionLinks = [
   { label: "Education", href: "#education" },
   { label: "Professional Experience", href: "#experience" },
@@ -84,10 +82,9 @@ const sectionLinks = [
 
 const About = () => (
   <Section id="about" className="py-20">
-    <div className="w-[90%] mx-auto grid md:grid-cols-[1fr_2fr] gap-12 md:gap-16">
-      {/* Left column */}
+    <div className="w-[85%] mx-auto grid md:grid-cols-[1fr_2fr] gap-12 md:gap-16">
       <div>
-        <h2 className="font-heading text-3xl md:text-4xl font-light tracking-tight">Muhammad Arham Wasim</h2>
+        <h2 className="font-heading text-3xl md:text-4xl font-light tracking-tight">A Arham Wasim</h2>
         <p className="font-heading text-sm text-secondary mt-2 tracking-wide">Product & Project Manager</p>
         <p className="font-body text-sm text-muted-foreground mt-4 font-light leading-relaxed">
           I build strategic, user-centric digital products and manage cross-functional teams to deliver impactful solutions.
@@ -106,18 +103,17 @@ const About = () => (
         </div>
       </div>
 
-      {/* Right column — About text */}
       <div>
         <h3 className="font-heading text-xs tracking-[0.3em] uppercase text-secondary mb-6">About Me</h3>
         <div className="space-y-5 font-body text-sm font-light text-muted-foreground leading-relaxed">
           <p>
-            I'm a Product and Project Manager who genuinely enjoys building things that feel effortless to use. Over the past 3+ years, I've worked across the full spectrum of product management — from discovery and strategy to execution and delivery. My work naturally evolved from coordinating software projects to shaping products and solving real business problems, collaborating closely with engineering, design, and business teams.
+            I'm a Product and Project Manager who genuinely enjoys building things that feel effortless to use. Over the past 3+ years, I've worked across the full spectrum of product management from discovery and strategy to execution and delivery. My work naturally evolved from coordinating software projects to shaping products and solving real business problems, collaborating closely with engineering, design, and business teams.
           </p>
           <p>
             Throughout my career, I've contributed to <span className="text-foreground font-normal">startups</span> and <span className="text-foreground font-normal">digital agencies</span>, helping them deliver scalable applications and high-performing digital experiences. From defining product roadmaps and writing PRDs to conducting A/B tests and analyzing conversion funnels, my focus stays the same: create products that are thoughtfully designed and built to scale.
           </p>
           <p>
-            At <span className="text-foreground font-normal">Alchemative</span>, I worked on Checkout Catalyst — a Shopify app transforming checkout experiences for some of Pakistan's top e-commerce brands including NISHAT, IMAGE PK, and Unze London. I've also managed end-to-end delivery of mobile and web applications at <span className="text-foreground font-normal">Asyncdevco</span>, ensuring projects ship on time with quality.
+            At <span className="text-foreground font-normal">Alchemative</span>, I worked on Checkout Catalyst, a Shopify app transforming checkout experiences for some of Pakistan's top e-commerce brands including NISHAT, IMAGE PK, and Unze London. I've also managed end-to-end delivery of mobile and web applications at <span className="text-foreground font-normal">Asyncdevco</span>, ensuring projects ship on time with quality.
           </p>
         </div>
         <a href="#contact" className="inline-flex items-center gap-2 mt-8 font-body text-xs tracking-[0.2em] uppercase border border-border rounded-sm px-6 py-3 text-foreground hover:border-secondary hover:text-secondary transition-colors duration-300">
@@ -128,31 +124,29 @@ const About = () => (
   </Section>
 );
 
-/* ─── EDUCATION ─── */
 const Education = () => (
   <Section id="education" className="py-20">
-    <div className="w-[90%] mx-auto">
+    <div className="w-[85%] mx-auto">
       <SectionTitle>Education</SectionTitle>
-      <div className="mt-10 border border-border rounded-sm p-8 md:p-10">
-        <p className="font-body text-xs tracking-[0.25em] uppercase text-secondary mb-3">2020 — 2024</p>
+      <div className="mt-10">
+        <p className="font-body text-xs tracking-[0.25em] uppercase text-secondary mb-3">2020 to 2024</p>
         <h3 className="font-heading text-xl md:text-2xl font-light">University of Agriculture, Faisalabad</h3>
         <p className="font-body text-sm text-muted-foreground mt-3 font-light">
-          Bachelor's Degree — Building the analytical foundation and strategic mindset for product leadership.
+          Bachelor's Degree, Building the analytical foundation and strategic mindset for product leadership.
         </p>
       </div>
     </div>
   </Section>
 );
 
-/* ─── EXPERIENCE ─── */
 const experiences = [
   {
-    period: "Jul 2023 — Nov 2024",
+    period: "Jul 2023 to Nov 2024",
     role: "Associate Product Manager",
     company: "Alchemative",
     link: "https://www.alchemative.com/",
     description: [
-      "Collaborated with Senior Product Manager Neelam on Checkout Catalyst — a Shopify app that transforms checkout experiences to boost store revenue.",
+      "Collaborated with Senior Product Manager Neelam on Checkout Catalyst, a Shopify app that transforms checkout experiences to boost store revenue.",
       "Owned product requirement documents (PRDs), user story mapping, and sprint planning for feature releases including payment modification, field validations, shipping modifiers, and upselling capabilities.",
       "Conducted A/B testing and analytics reviews to optimize conversion funnels, reducing abandoned cart rates across client stores.",
       "Performed competitive analysis and market research to identify feature gaps and inform the product roadmap.",
@@ -160,7 +154,7 @@ const experiences = [
       "Led stakeholder communication across engineering, design, and business teams to align on product vision.",
     ],
     highlights: {
-      title: "Checkout Catalyst — Key Features",
+      title: "Checkout Catalyst: Key Features",
       items: [
         "Payment & shipping modification based on customer segmentation",
         "Robust field validations ensuring data integrity",
@@ -170,29 +164,29 @@ const experiences = [
       ],
     },
     clients: {
-      title: "Client Onboarding — Top Pakistani E-commerce Brands",
+      title: "Client Onboarding: Top Pakistani E-commerce Brands",
       brands: ["IMAGE PK", "Unze London", "Elo", "NISHAT", "Servis"],
     },
   },
   {
-    period: "Sep 2022 — Feb 2023",
+    period: "Dec 2024 to Present",
     role: "Project Manager",
     company: "Asyncdevco",
     link: "https://www.asyncdevco.com/",
     description: [
-      "Managed end-to-end delivery of mobile and web application projects, reporting to the Team Lead and CTO.",
-      "Defined project scope, timelines, milestones, and resource allocation for cross-functional development teams.",
-      "Facilitated Agile/Scrum ceremonies — daily standups, sprint planning, retrospectives — ensuring continuous improvement.",
-      "Maintained Jira boards and Confluence documentation for transparent progress tracking and knowledge management.",
-      "Proactively identified risks, dependencies, and blockers, implementing mitigation strategies to keep projects on track.",
-      "Served as the primary client communication point, translating business requirements into actionable technical tasks.",
+      "Manage end-to-end delivery of mobile and web application projects, reporting to the Team Lead and CTO.",
+      "Define project scope, timelines, milestones, and resource allocation for cross-functional development teams.",
+      "Facilitate Agile/Scrum ceremonies daily standups, sprint planning, retrospectives ensuring continuous improvement.",
+      "Maintain Jira boards and Confluence documentation for transparent progress tracking and knowledge management.",
+      "Proactively identify risks, dependencies, and blockers, implementing mitigation strategies to keep projects on track.",
+      "Serve as the primary client communication point, translating business requirements into actionable technical tasks.",
     ],
   },
 ];
 
 const Experience = () => (
   <Section id="experience" className="py-20">
-    <div className="w-[90%] mx-auto">
+    <div className="w-[85%] mx-auto">
       <SectionTitle>Experience</SectionTitle>
       <div className="mt-10 space-y-14">
         {experiences.map((exp, i) => (
@@ -201,7 +195,7 @@ const Experience = () => (
             <p className="font-body text-xs tracking-[0.25em] uppercase text-secondary mb-2">{exp.period}</p>
             <h3 className="font-heading text-xl md:text-2xl font-light">
               {exp.role}{" "}
-              <span className="text-muted-foreground">—</span>{" "}
+              <span className="text-muted-foreground">at</span>{" "}
               <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors inline-flex items-center gap-1">
                 {exp.company} <ExternalLink className="w-3 h-3" />
               </a>
@@ -244,7 +238,6 @@ const Experience = () => (
   </Section>
 );
 
-/* ─── TOOLS ─── */
 const toolCategories = [
   {
     category: "Project Management",
@@ -253,7 +246,6 @@ const toolCategories = [
       { name: "Trello", icon: "https://cdn.simpleicons.org/trello/0052CC" },
       { name: "Asana", icon: "https://cdn.simpleicons.org/asana/F06A6A" },
       { name: "Monday.com", icon: "https://cdn.simpleicons.org/monday/6C41E0" },
-      { name: "ClickUp", icon: "https://cdn.simpleicons.org/clickup/7B68EE" },
     ],
   },
   {
@@ -301,22 +293,35 @@ const toolCategories = [
 
 const Tools = () => (
   <Section id="tools" className="py-20">
-    <div className="w-[90%] mx-auto">
+    <div className="w-[85%] mx-auto">
       <SectionTitle>Tools & Technology</SectionTitle>
-      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {toolCategories.map((cat, i) => (
-          <div key={i}>
-            <h4 className="font-heading text-xs tracking-[0.25em] uppercase text-secondary mb-4">{cat.category}</h4>
-            <div className="space-y-3">
-              {cat.tools.map((tool, j) => (
-                <div key={j} className="flex items-center gap-3">
-                  <img src={tool.icon} alt={tool.name} className="w-5 h-5" loading="lazy" />
-                  <p className="font-body text-sm font-light text-muted-foreground">{tool.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="mt-10">
+        <Tabs defaultValue="Project Management" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto gap-2 bg-transparent p-0">
+            {toolCategories.map((cat) => (
+              <TabsTrigger 
+                key={cat.category} 
+                value={cat.category}
+                className="rounded-sm border border-border data-[state=active]:bg-secondary/10 data-[state=active]:border-secondary data-[state=active]:text-secondary text-xs py-2"
+              >
+                {cat.category}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          
+          {toolCategories.map((cat) => (
+            <TabsContent key={cat.category} value={cat.category} className="mt-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {cat.tools.map((tool, j) => (
+                  <div key={j} className="flex flex-col items-center gap-3 p-4 border border-border rounded-sm hover:border-secondary/40 transition-colors duration-300">
+                    <img src={tool.icon} alt={tool.name} className="w-8 h-8" loading="lazy" />
+                    <p className="font-body text-xs font-light text-muted-foreground text-center">{tool.name}</p>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
     </div>
   </Section>
@@ -344,8 +349,8 @@ const approaches = [
 
 const Approach = () => (
   <Section id="approach" className="py-20">
-    <div className="w-[90%] mx-auto">
-      <SectionTitle>How I Work</SectionTitle>
+    <div className="w-[85%] mx-auto">
+      <SectionTitle>My Approach</SectionTitle>
       <div className="mt-10 grid md:grid-cols-2 gap-5">
         {approaches.map((item, i) => (
           <div key={i} className="border border-border rounded-sm p-7 hover:border-secondary/40 transition-colors duration-500">
@@ -358,29 +363,81 @@ const Approach = () => (
   </Section>
 );
 
+/* ─── WHAT I OFFER ─── */
+const services = [
+  {
+    title: "Product Strategy & Roadmap",
+    description: "Define clear product vision, market positioning, and actionable roadmaps aligned with business objectives and user needs.",
+  },
+  {
+    title: "Project Management & Delivery",
+    description: "Drive seamless execution through agile methodologies, resource planning, risk management, and on-time delivery of high-quality solutions.",
+  },
+  {
+    title: "Stakeholder Alignment",
+    description: "Bridge teams across engineering, design, and business to ensure aligned vision, transparent communication, and shared ownership.",
+  },
+  {
+    title: "User Research & Analytics",
+    description: "Conduct user discovery, gather insights through analytics and A/B testing, and use data to inform product decisions.",
+  },
+  {
+    title: "Product Documentation",
+    description: "Create comprehensive PRDs, user stories, process documentation, and knowledge bases for transparent project execution.",
+  },
+  {
+    title: "Team Leadership & Coordination",
+    description: "Build and lead high-performing cross-functional teams, facilitate agile ceremonies, and foster continuous improvement culture.",
+  },
+];
+
+const WhatIOffer = () => (
+  <Section id="services" className="py-20">
+    <div className="w-[85%] mx-auto">
+      <SectionTitle>What I Offer</SectionTitle>
+      <p className="mt-6 font-body text-sm text-muted-foreground font-light max-w-2xl leading-relaxed">
+        As a Product and Project Manager, I bring strategic thinking and operational excellence to help organizations, businesses, and freelancers build and scale digital products successfully. Here's how I can contribute to your success:
+      </p>
+      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, i) => (
+          <div key={i} className="border border-border rounded-sm p-6 hover:border-secondary/40 transition-colors duration-500">
+            <h4 className="font-heading text-base font-light mb-3 text-foreground">{service.title}</h4>
+            <p className="font-body text-sm font-light text-muted-foreground leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+);
+
 /* ─── CONTACT ─── */
 const Contact = () => (
   <Section id="contact" className="py-20">
-    <div className="w-[90%] mx-auto text-center">
+    <div className="w-[85%] mx-auto text-center">
       <SectionTitle>
         <span className="inline-block">Let's Connect</span>
       </SectionTitle>
-      <p className="mt-6 font-body text-sm text-muted-foreground font-light max-w-md mx-auto leading-relaxed">
-        Open to conversations about product strategy, project management, and new opportunities.
+      <p className="mt-6 font-body text-sm text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
+        I'm always interested in discussing new opportunities, product challenges, and how I can help bring your vision to life. Whether you're looking for product strategy guidance, project management support, or want to collaborate on something exciting, let's talk.
       </p>
-      <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-8">
-        <a href="mailto:enchantinggeekboy@gmail.com" className="flex items-center gap-3 font-body text-sm text-foreground hover:text-secondary transition-colors">
-          <Mail className="w-4 h-4 text-secondary" />
+      <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="mailto:enchantinggeekboy@gmail.com" className="flex items-center gap-3 font-body text-sm text-foreground hover:text-secondary transition-colors border border-border rounded-sm px-6 py-3 hover:border-secondary">
+          <Mail className="w-4 h-4" />
           enchantinggeekboy@gmail.com
         </a>
-        <a href="tel:+923198647377" className="flex items-center gap-3 font-body text-sm text-foreground hover:text-secondary transition-colors">
-          <Phone className="w-4 h-4 text-secondary" />
+        <a href="tel:+923198647377" className="flex items-center gap-3 font-body text-sm text-foreground hover:text-secondary transition-colors border border-border rounded-sm px-6 py-3 hover:border-secondary">
+          <Phone className="w-4 h-4" />
           +92 319 864 7377
+        </a>
+      </div>
+      <div className="mt-8 flex items-center justify-center gap-6">
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-secondary transition-colors">
+          <Linkedin className="w-5 h-5" />
         </a>
       </div>
       <div className="mt-16 w-16 h-[1px] bg-border mx-auto" />
       <p className="mt-6 font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-        © 2024 Muhammad Arham Wasim
+        © 2024 A Arham Wasim
       </p>
     </div>
   </Section>
@@ -396,6 +453,7 @@ const Index = () => (
     <Experience />
     <Tools />
     <Approach />
+    <WhatIOffer />
     <Contact />
   </div>
 );
