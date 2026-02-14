@@ -295,33 +295,31 @@ const Tools = () => (
   <Section id="tools" className="py-20">
     <div className="w-[85%] mx-auto">
       <SectionTitle>Tools & Technology</SectionTitle>
-      <div className="mt-10">
-        <Tabs defaultValue="Project Management" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto gap-2 bg-transparent p-0">
-            {toolCategories.map((cat) => (
-              <TabsTrigger 
-                key={cat.category} 
-                value={cat.category}
-                className="rounded-sm border border-border data-[state=active]:bg-secondary/10 data-[state=active]:border-secondary data-[state=active]:text-secondary text-xs py-2"
-              >
-                {cat.category}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          
-          {toolCategories.map((cat) => (
-            <TabsContent key={cat.category} value={cat.category} className="mt-8">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {cat.tools.map((tool, j) => (
-                  <div key={j} className="flex flex-col items-center gap-3 p-4 border border-border rounded-sm hover:border-secondary/40 transition-colors duration-300">
-                    <img src={tool.icon} alt={tool.name} className="w-8 h-8" loading="lazy" />
-                    <p className="font-body text-xs font-light text-muted-foreground text-center">{tool.name}</p>
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+      <div className="mt-12 space-y-12">
+        {toolCategories.map((cat, idx) => (
+          <div key={idx} className="space-y-6">
+            <div>
+              <h3 className="font-heading text-lg font-light text-foreground mb-1">{cat.category}</h3>
+              <div className="w-12 h-[1px] bg-secondary" />
+            </div>
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {cat.tools.map((tool, j) => (
+                <div 
+                  key={j} 
+                  className="flex flex-col items-center justify-center p-5 border border-border rounded-lg hover:border-secondary/60 hover:shadow-md hover:shadow-secondary/10 transition-all duration-300 group"
+                >
+                  <img 
+                    src={tool.icon} 
+                    alt={tool.name} 
+                    className="w-10 h-10 mb-3 group-hover:scale-110 transition-transform duration-300" 
+                    loading="lazy" 
+                  />
+                  <p className="font-body text-xs font-light text-muted-foreground text-center group-hover:text-foreground transition-colors">{tool.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </Section>
