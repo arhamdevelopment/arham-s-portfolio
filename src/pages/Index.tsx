@@ -245,7 +245,7 @@ const toolCategories = [
       { name: "Jira", icon: "https://cdn.simpleicons.org/jira/2684FF" },
       { name: "Trello", icon: "https://cdn.simpleicons.org/trello/0052CC" },
       { name: "Asana", icon: "https://cdn.simpleicons.org/asana/F06A6A" },
-      { name: "Monday.com", icon: "https://cdn.simpleicons.org/monday/6C41E0" },
+      { name: "Monday.com", icon: "https://cdn.simpleicons.org/mondaycom/6C41E0" },
     ],
   },
   {
@@ -268,8 +268,8 @@ const toolCategories = [
   {
     category: "Communication",
     tools: [
-      { name: "Slack", icon: "https://cdn.simpleicons.org/slack/4A154B" },
-      { name: "Microsoft Teams", icon: "https://cdn.simpleicons.org/microsoftteams/6264A7" },
+      { name: "Slack", icon: "https://cdn.simpleicons.org/slack/E01E5A" },
+      { name: "Microsoft Teams", icon: "https://cdn.simpleicons.org/microsoftteams/0078D4" },
       { name: "Zoom", icon: "https://cdn.simpleicons.org/zoom/0B5CFF" },
     ],
   },
